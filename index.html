@@ -144,6 +144,10 @@
       font-weight: 600;
     }
 
+    .tag-ref {
+      background: #888;
+    }
+
     footer {
       margin-top: 3rem;
       border-top: 1px solid #ddd;
@@ -173,20 +177,20 @@
   <section class="category">
     <div class="category-title">Focus</div>
 
-    <!-- Focus example 1 -->
+    <!-- Focus example 1 (focus_3) -->
     <div class="example">
       <div class="example-title">Example 1</div>
 
       <div class="transcripts">
         <div class="transcript-item">
           <div class="label">Interpretation A</div>
-          <div class="context">CONTEXT A GOES HERE</div>
-          <div class="text">TRANSCRIPT GOES HERE</div>
+          <div class="context">Jane brought an appetizer and salad.</div>
+          <div class="text">Roger brought pasta and dessert to the potluck.</div>
         </div>
         <div class="transcript-item">
           <div class="label">Interpretation B</div>
-          <div class="context">CONTEXT B GOES HERE</div>
-          <div class="text">TRANSCRIPT GOES HERE</div>
+          <div class="context">Most people just brought snacks or a side dish.</div>
+          <div class="text">Roger brought pasta and dessert to the potluck.</div>
         </div>
       </div>
 
@@ -199,35 +203,43 @@
         </thead>
         <tbody>
           <tr>
+            <td>Reference A <span class="tag tag-ref">ref</span></td>
+            <td><audio controls src="audio/focus/focus_3a_ref.wav"></audio></td>
+          </tr>
+          <tr>
             <td>System A <span class="tag">prosody</span></td>
-            <td><audio controls src="audio/focus/focus_1_a.wav"></audio></td>
+            <td><audio controls src="audio/focus/focus_3a.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>Reference B <span class="tag tag-ref">ref</span></td>
+            <td><audio controls src="audio/focus/focus_3b_ref.wav"></audio></td>
           </tr>
           <tr>
             <td>System B <span class="tag">prosody</span></td>
-            <td><audio controls src="audio/focus/focus_1_b.wav"></audio></td>
+            <td><audio controls src="audio/focus/focus_3b.wav"></audio></td>
           </tr>
           <tr>
             <td>No-prosody baseline</td>
-            <td><audio controls src="audio/focus/focus_1_no_prosody.wav"></audio></td>
+            <td><audio controls src="audio/focus/focus_3_no_prosody.wav"></audio></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- Focus example 2 -->
+    <!-- Focus example 2 (focus_4) -->
     <div class="example">
       <div class="example-title">Example 2</div>
 
       <div class="transcripts">
         <div class="transcript-item">
           <div class="label">Interpretation A</div>
-          <div class="context">CONTEXT A GOES HERE</div>
-          <div class="text">TRANSCRIPT GOES HERE</div>
+          <div class="context">Her brother wanted the red flag.</div>
+          <div class="text">Mandy chose a red balloon.</div>
         </div>
         <div class="transcript-item">
           <div class="label">Interpretation B</div>
-          <div class="context">CONTEXT B GOES HERE</div>
-          <div class="text">TRANSCRIPT GOES HERE</div>
+          <div class="context">There were many colors to choose from.</div>
+          <div class="text">Mandy chose a red balloon.</div>
         </div>
       </div>
 
@@ -240,16 +252,24 @@
         </thead>
         <tbody>
           <tr>
+            <td>Reference A <span class="tag tag-ref">ref</span></td>
+            <td><audio controls src="audio/focus/focus_4a_ref.wav"></audio></td>
+          </tr>
+          <tr>
             <td>System A <span class="tag">prosody</span></td>
-            <td><audio controls src="audio/focus/focus_2_a.wav"></audio></td>
+            <td><audio controls src="audio/focus/focus_4a.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>Reference B <span class="tag tag-ref">ref</span></td>
+            <td><audio controls src="audio/focus/focus_4b_ref.wav"></audio></td>
           </tr>
           <tr>
             <td>System B <span class="tag">prosody</span></td>
-            <td><audio controls src="audio/focus/focus_2_b.wav"></audio></td>
+            <td><audio controls src="audio/focus/focus_4b.wav"></audio></td>
           </tr>
           <tr>
             <td>No-prosody baseline</td>
-            <td><audio controls src="audio/focus/focus_2_no_prosody.wav"></audio></td>
+            <td><audio controls src="audio/focus/focus_4_no_prosody.wav"></audio></td>
           </tr>
         </tbody>
       </table>
