@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prosody Perception — Audio Samples</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #222;
+      background: #fafafa;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 2px solid #333;
+      padding-bottom: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    header h1 { font-size: 1.6rem; }
+    header p  { color: #555; margin-top: 0.4rem; }
+
+    /* ── category sections ── */
+    .category { margin-bottom: 3rem; }
+    .category-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    /* ── individual example card ── */
+    .example {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .example-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    /* ── transcript items ── */
+    .transcripts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .transcripts { grid-template-columns: 1fr; }
+    }
+
+    .transcript-item {
+      background: #f4f6fb;
+      border-left: 4px solid #4C72B0;
+      border-radius: 3px;
+      padding: 0.6rem 0.8rem;
+      font-size: 0.92rem;
+    }
+
+    .transcript-item .label {
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: #4C72B0;
+      margin-bottom: 0.25rem;
+    }
+
+    .transcript-item .context {
+      color: #666;
+      font-style: italic;
+      margin-bottom: 0.2rem;
+    }
+
+    .transcript-item .text {
+      font-weight: 600;
+    }
+
+    /* ── audio rows ── */
+    .audio-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .audio-table th {
+      text-align: left;
+      font-weight: 600;
+      color: #555;
+      padding: 0.3rem 0.5rem 0.3rem 0;
+      border-bottom: 1px solid #eee;
+      white-space: nowrap;
+    }
+
+    .audio-table td {
+      padding: 0.35rem 0.5rem 0.35rem 0;
+      vertical-align: middle;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .audio-table td:first-child {
+      white-space: nowrap;
+      font-weight: 500;
+      width: 160px;
+    }
+
+    audio {
+      width: 100%;
+      height: 32px;
+      display: block;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #4C72B0;
+      color: white;
+      border-radius: 3px;
+      font-size: 0.72rem;
+      padding: 1px 5px;
+      margin-left: 4px;
+      vertical-align: middle;
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 3rem;
+      border-top: 1px solid #ddd;
+      padding-top: 1rem;
+      font-size: 0.85rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1>Prosody Perception — Audio Samples</h1>
+    <p>
+      Selected examples from our perceptual evaluation. Each example shows two
+      interpretations of an ambiguous sentence alongside three audio conditions:
+      <strong>System A</strong> (prosody-conditioned, context A),
+      <strong>System B</strong> (prosody-conditioned, context B), and
+      <strong>No-prosody baseline</strong>.
+    </p>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOCUS
+  ════════════════════════════════════════════════════════════════════════ -->
+  <section class="category">
+    <div class="category-title">Focus</div>
+
+    <!-- Focus example 1 -->
+    <div class="example">
+      <div class="example-title">Example 1</div>
+
+      <div class="transcripts">
+        <div class="transcript-item">
+          <div class="label">Interpretation A</div>
+          <div class="context">CONTEXT A GOES HERE</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+        <div class="transcript-item">
+          <div class="label">Interpretation B</div>
+          <div class="context">CONTEXT B GOES HERE</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+      </div>
+
+      <table class="audio-table">
+        <thead>
+          <tr>
+            <th>Condition</th>
+            <th>Audio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>System A <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/focus/focus_1_a.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>System B <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/focus/focus_1_b.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>No-prosody baseline</td>
+            <td><audio controls src="audio/focus/focus_1_no_prosody.wav"></audio></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Focus example 2 -->
+    <div class="example">
+      <div class="example-title">Example 2</div>
+
+      <div class="transcripts">
+        <div class="transcript-item">
+          <div class="label">Interpretation A</div>
+          <div class="context">CONTEXT A GOES HERE</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+        <div class="transcript-item">
+          <div class="label">Interpretation B</div>
+          <div class="context">CONTEXT B GOES HERE</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+      </div>
+
+      <table class="audio-table">
+        <thead>
+          <tr>
+            <th>Condition</th>
+            <th>Audio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>System A <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/focus/focus_2_a.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>System B <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/focus/focus_2_b.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>No-prosody baseline</td>
+            <td><audio controls src="audio/focus/focus_2_no_prosody.wav"></audio></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       HESITATION
+  ════════════════════════════════════════════════════════════════════════ -->
+  <section class="category">
+    <div class="category-title">Hesitation</div>
+
+    <!-- Hesitation example 1 -->
+    <div class="example">
+      <div class="example-title">Example 1</div>
+
+      <div class="transcripts">
+        <div class="transcript-item">
+          <div class="label">Interpretation A</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+        <div class="transcript-item">
+          <div class="label">Interpretation B</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+      </div>
+
+      <table class="audio-table">
+        <thead><tr><th>Condition</th><th>Audio</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>System A <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/hesitation/hesitation_1_a.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>System B <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/hesitation/hesitation_1_b.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>No-prosody baseline</td>
+            <td><audio controls src="audio/hesitation/hesitation_1_no_prosody.wav"></audio></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Hesitation example 2 -->
+    <div class="example">
+      <div class="example-title">Example 2</div>
+
+      <div class="transcripts">
+        <div class="transcript-item">
+          <div class="label">Interpretation A</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+        <div class="transcript-item">
+          <div class="label">Interpretation B</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+      </div>
+
+      <table class="audio-table">
+        <thead><tr><th>Condition</th><th>Audio</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>System A <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/hesitation/hesitation_2_a.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>System B <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/hesitation/hesitation_2_b.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>No-prosody baseline</td>
+            <td><audio controls src="audio/hesitation/hesitation_2_no_prosody.wav"></audio></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       PHRASE
+  ════════════════════════════════════════════════════════════════════════ -->
+  <section class="category">
+    <div class="category-title">Phrase</div>
+
+    <!-- Phrase example 1 -->
+    <div class="example">
+      <div class="example-title">Example 1</div>
+
+      <div class="transcripts">
+        <div class="transcript-item">
+          <div class="label">Interpretation A</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+        <div class="transcript-item">
+          <div class="label">Interpretation B</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+      </div>
+
+      <table class="audio-table">
+        <thead><tr><th>Condition</th><th>Audio</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>System A <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/phrase/phrase_1_a.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>System B <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/phrase/phrase_1_b.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>No-prosody baseline</td>
+            <td><audio controls src="audio/phrase/phrase_1_no_prosody.wav"></audio></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Phrase example 2 -->
+    <div class="example">
+      <div class="example-title">Example 2</div>
+
+      <div class="transcripts">
+        <div class="transcript-item">
+          <div class="label">Interpretation A</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+        <div class="transcript-item">
+          <div class="label">Interpretation B</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+      </div>
+
+      <table class="audio-table">
+        <thead><tr><th>Condition</th><th>Audio</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>System A <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/phrase/phrase_2_a.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>System B <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/phrase/phrase_2_b.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>No-prosody baseline</td>
+            <td><audio controls src="audio/phrase/phrase_2_no_prosody.wav"></audio></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       QUESTION
+  ════════════════════════════════════════════════════════════════════════ -->
+  <section class="category">
+    <div class="category-title">Question</div>
+
+    <!-- Question example 1 -->
+    <div class="example">
+      <div class="example-title">Example 1</div>
+
+      <div class="transcripts">
+        <div class="transcript-item">
+          <div class="label">Interpretation A</div>
+          <div class="context">CONTEXT A GOES HERE</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+        <div class="transcript-item">
+          <div class="label">Interpretation B</div>
+          <div class="context">CONTEXT B GOES HERE</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+      </div>
+
+      <table class="audio-table">
+        <thead><tr><th>Condition</th><th>Audio</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>System A <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/question/question_1_a.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>System B <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/question/question_1_b.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>No-prosody baseline</td>
+            <td><audio controls src="audio/question/question_1_no_prosody.wav"></audio></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Question example 2 -->
+    <div class="example">
+      <div class="example-title">Example 2</div>
+
+      <div class="transcripts">
+        <div class="transcript-item">
+          <div class="label">Interpretation A</div>
+          <div class="context">CONTEXT A GOES HERE</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+        <div class="transcript-item">
+          <div class="label">Interpretation B</div>
+          <div class="context">CONTEXT B GOES HERE</div>
+          <div class="text">TRANSCRIPT GOES HERE</div>
+        </div>
+      </div>
+
+      <table class="audio-table">
+        <thead><tr><th>Condition</th><th>Audio</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>System A <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/question/question_2_a.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>System B <span class="tag">prosody</span></td>
+            <td><audio controls src="audio/question/question_2_b.wav"></audio></td>
+          </tr>
+          <tr>
+            <td>No-prosody baseline</td>
+            <td><audio controls src="audio/question/question_2_no_prosody.wav"></audio></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Submitted for peer review. Audio samples generated by the proposed system.
+  </footer>
+
+</div>
+</body>
+</html>
