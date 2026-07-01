@@ -98,47 +98,18 @@
       padding: 0.4rem 0.6rem;
       background: #eef1f8;
       border: 1px solid #d0d8ec;
+      width: 50%;
     }
-
-    .ab-table th:nth-child(1),
-    .ab-table td:nth-child(1) { width: 38%; }
-    .ab-table th:nth-child(2),
-    .ab-table td:nth-child(2) { width: 31%; }
-    .ab-table th:nth-child(3),
-    .ab-table td:nth-child(3) { width: 31%; }
 
     .ab-table td {
       vertical-align: top;
       padding: 0.5rem 0.6rem;
       border: 1px solid #e5e5e5;
+      width: 50%;
     }
 
     .ab-table tr.row-noprosody td {
       background: #f4f6fb;
-    }
-
-    .context-text {
-      color: #666;
-      font-style: italic;
-      font-size: 0.88rem;
-      margin-bottom: 0.2rem;
-    }
-
-    .transcript-text {
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .tag-ref {
-      display: inline-block;
-      background: #888;
-      color: white;
-      border-radius: 3px;
-      font-size: 0.68rem;
-      padding: 1px 4px;
-      margin-left: 3px;
-      vertical-align: middle;
-      font-weight: 600;
     }
 
     audio {
@@ -187,30 +158,20 @@
       <table class="ab-table">
         <thead>
           <tr>
-            <th><em>Context</em> + transcript (shown to subject)</th>
             <th>Reference prosody audio</th>
             <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
           <tr class="row-noprosody">
-            <td>&mdash;</td>
             <td>No prosody control</td>
             <td><audio controls src="audio/focus/focus_3_no_prosody.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="context-text">Jane brought an appetizer and salad.</div>
-              <div class="transcript-text">Roger brought pasta and dessert to the potluck.</div>
-            </td>
             <td><audio controls src="audio/focus/focus_3a_ref.wav"></audio></td>
             <td><audio controls src="audio/focus/focus_3a.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="context-text">Most people just brought snacks or a side dish.</div>
-              <div class="transcript-text">Roger brought pasta and dessert to the potluck.</div>
-            </td>
             <td><audio controls src="audio/focus/focus_3b_ref.wav"></audio></td>
             <td><audio controls src="audio/focus/focus_3b.wav"></audio></td>
           </tr>
@@ -230,30 +191,20 @@
       <table class="ab-table">
         <thead>
           <tr>
-            <th><em>Context</em> + transcript (shown to subject)</th>
             <th>Reference prosody audio</th>
             <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
           <tr class="row-noprosody">
-            <td>&mdash;</td>
             <td>No prosody control</td>
             <td><audio controls src="audio/focus/focus_4_no_prosody.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="context-text">Her brother wanted the red flag.</div>
-              <div class="transcript-text">Mandy chose a red balloon.</div>
-            </td>
             <td><audio controls src="audio/focus/focus_4a_ref.wav"></audio></td>
             <td><audio controls src="audio/focus/focus_4a.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="context-text">There were many colors to choose from.</div>
-              <div class="transcript-text">Mandy chose a red balloon.</div>
-            </td>
             <td><audio controls src="audio/focus/focus_4b_ref.wav"></audio></td>
             <td><audio controls src="audio/focus/focus_4b.wav"></audio></td>
           </tr>
@@ -280,28 +231,20 @@
       <table class="ab-table">
         <thead>
           <tr>
-            <th><em>Context</em> + transcript (shown to subject)</th>
             <th>Reference prosody audio</th>
             <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
           <tr class="row-noprosody">
-            <td>&mdash;</td>
             <td>No prosody control</td>
             <td><audio controls src="audio/hesitation/hesitation_2_no_prosody.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="transcript-text">They asked for a table for four tonight.</div>
-            </td>
             <td><audio controls src="audio/hesitation/hesitation_2a_ref.wav"></audio></td>
             <td><audio controls src="audio/hesitation/hesitation_2a.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="transcript-text">They asked for a table for...for tonight.</div>
-            </td>
             <td><audio controls src="audio/hesitation/hesitation_2b_ref.wav"></audio></td>
             <td><audio controls src="audio/hesitation/hesitation_2b.wav"></audio></td>
           </tr>
@@ -321,28 +264,20 @@
       <table class="ab-table">
         <thead>
           <tr>
-            <th><em>Context</em> + transcript (shown to subject)</th>
             <th>Reference prosody audio</th>
             <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
           <tr class="row-noprosody">
-            <td>&mdash;</td>
             <td>No prosody control</td>
             <td><audio controls src="audio/hesitation/hesitation_4_no_prosody.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="transcript-text">That was very, very thoughtful of her.</div>
-            </td>
             <td><audio controls src="audio/hesitation/hesitation_4a_ref.wav"></audio></td>
             <td><audio controls src="audio/hesitation/hesitation_4a.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="transcript-text">That was very...very thoughtful of her.</div>
-            </td>
             <td><audio controls src="audio/hesitation/hesitation_4b_ref.wav"></audio></td>
             <td><audio controls src="audio/hesitation/hesitation_4b.wav"></audio></td>
           </tr>
@@ -369,28 +304,20 @@
       <table class="ab-table">
         <thead>
           <tr>
-            <th><em>Context</em> + transcript (shown to subject)</th>
             <th>Reference prosody audio</th>
             <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
           <tr class="row-noprosody">
-            <td>&mdash;</td>
             <td>No prosody control</td>
             <td><audio controls src="audio/phrase/phrase_1_no_prosody.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="transcript-text">The market is at 3120 Seventh Avenue.</div>
-            </td>
             <td><audio controls src="audio/phrase/phrase_1a_ref.wav"></audio></td>
             <td><audio controls src="audio/phrase/phrase_1a.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="transcript-text">The market is at 31 Twenty-seventh Avenue.</div>
-            </td>
             <td><audio controls src="audio/phrase/phrase_1b_ref.wav"></audio></td>
             <td><audio controls src="audio/phrase/phrase_1b.wav"></audio></td>
           </tr>
@@ -410,30 +337,20 @@
       <table class="ab-table">
         <thead>
           <tr>
-            <th><em>Context</em> + transcript (shown to subject)</th>
             <th>Reference prosody audio</th>
             <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
           <tr class="row-noprosody">
-            <td>&mdash;</td>
             <td>No prosody control</td>
             <td><audio controls src="audio/phrase/phrase_3_no_prosody.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="context-text">Most of the women had forgotten the strange event by the next week.</div>
-              <div class="transcript-text">Only one remembered the lady in red.</div>
-            </td>
             <td><audio controls src="audio/phrase/phrase_3a_ref.wav"></audio></td>
             <td><audio controls src="audio/phrase/phrase_3a.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="context-text">Most of the people forgot about the strange visitor.</div>
-              <div class="transcript-text">Only one remembered: the lady in red.</div>
-            </td>
             <td><audio controls src="audio/phrase/phrase_3b_ref.wav"></audio></td>
             <td><audio controls src="audio/phrase/phrase_3b.wav"></audio></td>
           </tr>
@@ -460,30 +377,20 @@
       <table class="ab-table">
         <thead>
           <tr>
-            <th><em>Context</em> + transcript (shown to subject)</th>
             <th>Reference prosody audio</th>
             <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
           <tr class="row-noprosody">
-            <td>&mdash;</td>
             <td>No prosody control</td>
             <td><audio controls src="audio/question/question_4_no_prosody.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="context-text">We need to pick up food for the picnic.</div>
-              <div class="transcript-text">Yeah, George can do that.</div>
-            </td>
             <td><audio controls src="audio/question/question_4a_ref.wav"></audio></td>
             <td><audio controls src="audio/question/question_4a.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="context-text">George is out on our busiest week.</div>
-              <div class="transcript-text">Yeah? George can do that?</div>
-            </td>
             <td><audio controls src="audio/question/question_4b_ref.wav"></audio></td>
             <td><audio controls src="audio/question/question_4b.wav"></audio></td>
           </tr>
@@ -503,28 +410,20 @@
       <table class="ab-table">
         <thead>
           <tr>
-            <th><em>Context</em> + transcript (shown to subject)</th>
             <th>Reference prosody audio</th>
             <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
           <tr class="row-noprosody">
-            <td>&mdash;</td>
             <td>No prosody control</td>
             <td><audio controls src="audio/question/question_5_no_prosody.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="transcript-text">There's nothing left.</div>
-            </td>
             <td><audio controls src="audio/question/question_5a_ref.wav"></audio></td>
             <td><audio controls src="audio/question/question_5a.wav"></audio></td>
           </tr>
           <tr class="row-ab">
-            <td>
-              <div class="transcript-text">There's nothing left?</div>
-            </td>
             <td><audio controls src="audio/question/question_5b_ref.wav"></audio></td>
             <td><audio controls src="audio/question/question_5b.wav"></audio></td>
           </tr>
