@@ -59,8 +59,8 @@
       color: #444;
     }
 
-    /* ── no-prosody header ── */
-    .no-prosody-section {
+    /* ── text input section ── */
+    .text-input-section {
       background: #f4f4f4;
       border: 1px solid #ddd;
       border-radius: 4px;
@@ -68,7 +68,7 @@
       margin-bottom: 1.1rem;
     }
 
-    .no-prosody-section .np-label {
+    .text-input-section .np-label {
       font-size: 0.8rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -77,13 +77,12 @@
       margin-bottom: 0.2rem;
     }
 
-    .no-prosody-section .np-text {
+    .text-input-section .np-text {
       font-style: italic;
       color: #333;
-      margin-bottom: 0.5rem;
     }
 
-    /* ── A/B comparison table ── */
+    /* ── prosody comparison table ── */
     .ab-table {
       width: 100%;
       border-collapse: collapse;
@@ -99,32 +98,23 @@
       padding: 0.4rem 0.6rem;
       background: #eef1f8;
       border: 1px solid #d0d8ec;
-      width: 50%;
     }
+
+    .ab-table th:nth-child(1),
+    .ab-table td:nth-child(1) { width: 38%; }
+    .ab-table th:nth-child(2),
+    .ab-table td:nth-child(2) { width: 31%; }
+    .ab-table th:nth-child(3),
+    .ab-table td:nth-child(3) { width: 31%; }
 
     .ab-table td {
       vertical-align: top;
       padding: 0.5rem 0.6rem;
       border: 1px solid #e5e5e5;
-      width: 50%;
     }
 
-    .ab-table tr.row-transcript td {
+    .ab-table tr.row-noprosody td {
       background: #f4f6fb;
-      border-bottom: none;
-    }
-
-    .ab-table tr.row-ref td {
-      padding-top: 0.4rem;
-      padding-bottom: 0.2rem;
-      border-top: none;
-      border-bottom: none;
-      background: #f9f9f9;
-    }
-
-    .ab-table tr.row-system td {
-      border-top: none;
-      background: #fff;
     }
 
     .context-text {
@@ -137,15 +127,6 @@
     .transcript-text {
       font-weight: 600;
       font-size: 0.95rem;
-    }
-
-    .audio-row-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: #888;
-      margin-bottom: 2px;
     }
 
     .tag-ref {
@@ -181,7 +162,10 @@
   <header>
     <h1>Preserving Prosody in Speaker Anonymization</h1>
     <p>
-      Selected examples used in our perceptual experiment. Note: this paper is currently under review.
+      Selected examples used in our perceptual experiment. Context sentences are provided in italics to assist subjects in interpreting the intended prosody, but are not included in the audio.
+    </p>
+    <p>
+      <em>Note: this paper is currently under review.</em>
     </p>
   </header>
 
@@ -193,52 +177,42 @@
 
     <!-- Focus example 1 (focus_3) -->
     <div class="example">
-      <div class="example-title">Example 1</div>
+      <div class="example-title">Focus example 1</div>
 
-      <div class="no-prosody-section">
+      <div class="text-input-section">
         <div class="np-label">CosyVoice2 text input</div>
         <div class="np-text">roger brought pasta and dessert to the potluck</div>
-        <div class="np-label" style="margin-top:0.4rem">CosyVoice2 output — no prosody control</div>
-        <audio controls src="audio/focus/focus_3_no_prosody.wav"></audio>
       </div>
 
       <table class="ab-table">
         <thead>
           <tr>
-            <th>A</th>
-            <th>B</th>
+            <th><em>Context</em> + transcript (shown to subject)</th>
+            <th>Reference prosody audio</th>
+            <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="row-transcript">
+          <tr class="row-noprosody">
+            <td>&mdash;</td>
+            <td>No prosody control</td>
+            <td><audio controls src="audio/focus/focus_3_no_prosody.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="context-text">Jane brought an appetizer and salad.</div>
               <div class="transcript-text">Roger brought pasta and dessert to the potluck.</div>
             </td>
+            <td><audio controls src="audio/focus/focus_3a_ref.wav"></audio></td>
+            <td><audio controls src="audio/focus/focus_3a.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="context-text">Most people just brought snacks or a side dish.</div>
               <div class="transcript-text">Roger brought pasta and dessert to the potluck.</div>
             </td>
-          </tr>
-          <tr class="row-ref">
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/focus/focus_3a_ref.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/focus/focus_3b_ref.wav"></audio>
-            </td>
-          </tr>
-          <tr class="row-system">
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/focus/focus_3a.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/focus/focus_3b.wav"></audio>
-            </td>
+            <td><audio controls src="audio/focus/focus_3b_ref.wav"></audio></td>
+            <td><audio controls src="audio/focus/focus_3b.wav"></audio></td>
           </tr>
         </tbody>
       </table>
@@ -246,52 +220,42 @@
 
     <!-- Focus example 2 (focus_4) -->
     <div class="example">
-      <div class="example-title">Example 2</div>
+      <div class="example-title">Focus example 2</div>
 
-      <div class="no-prosody-section">
+      <div class="text-input-section">
         <div class="np-label">CosyVoice2 text input</div>
         <div class="np-text">mandy chose a red balloon</div>
-        <div class="np-label" style="margin-top:0.4rem">CosyVoice2 output — no prosody control</div>
-        <audio controls src="audio/focus/focus_4_no_prosody.wav"></audio>
       </div>
 
       <table class="ab-table">
         <thead>
           <tr>
-            <th>A</th>
-            <th>B</th>
+            <th><em>Context</em> + transcript (shown to subject)</th>
+            <th>Reference prosody audio</th>
+            <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="row-transcript">
+          <tr class="row-noprosody">
+            <td>&mdash;</td>
+            <td>No prosody control</td>
+            <td><audio controls src="audio/focus/focus_4_no_prosody.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="context-text">Her brother wanted the red flag.</div>
               <div class="transcript-text">Mandy chose a red balloon.</div>
             </td>
+            <td><audio controls src="audio/focus/focus_4a_ref.wav"></audio></td>
+            <td><audio controls src="audio/focus/focus_4a.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="context-text">There were many colors to choose from.</div>
               <div class="transcript-text">Mandy chose a red balloon.</div>
             </td>
-          </tr>
-          <tr class="row-ref">
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/focus/focus_4a_ref.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/focus/focus_4b_ref.wav"></audio>
-            </td>
-          </tr>
-          <tr class="row-system">
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/focus/focus_4a.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/focus/focus_4b.wav"></audio>
-            </td>
+            <td><audio controls src="audio/focus/focus_4b_ref.wav"></audio></td>
+            <td><audio controls src="audio/focus/focus_4b.wav"></audio></td>
           </tr>
         </tbody>
       </table>
@@ -306,50 +270,40 @@
 
     <!-- Hesitation example 1 (hesitation_2) -->
     <div class="example">
-      <div class="example-title">Example 1</div>
+      <div class="example-title">Hesitation example 1</div>
 
-      <div class="no-prosody-section">
+      <div class="text-input-section">
         <div class="np-label">CosyVoice2 text input</div>
         <div class="np-text">they asked for a table for for tonight</div>
-        <div class="np-label" style="margin-top:0.4rem">CosyVoice2 output — no prosody control</div>
-        <audio controls src="audio/hesitation/hesitation_2_no_prosody.wav"></audio>
       </div>
 
       <table class="ab-table">
         <thead>
           <tr>
-            <th>A</th>
-            <th>B</th>
+            <th><em>Context</em> + transcript (shown to subject)</th>
+            <th>Reference prosody audio</th>
+            <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="row-transcript">
+          <tr class="row-noprosody">
+            <td>&mdash;</td>
+            <td>No prosody control</td>
+            <td><audio controls src="audio/hesitation/hesitation_2_no_prosody.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="transcript-text">They asked for a table for four tonight.</div>
             </td>
+            <td><audio controls src="audio/hesitation/hesitation_2a_ref.wav"></audio></td>
+            <td><audio controls src="audio/hesitation/hesitation_2a.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="transcript-text">They asked for a table for...for tonight.</div>
             </td>
-          </tr>
-          <tr class="row-ref">
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/hesitation/hesitation_2a_ref.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/hesitation/hesitation_2b_ref.wav"></audio>
-            </td>
-          </tr>
-          <tr class="row-system">
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/hesitation/hesitation_2a.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/hesitation/hesitation_2b.wav"></audio>
-            </td>
+            <td><audio controls src="audio/hesitation/hesitation_2b_ref.wav"></audio></td>
+            <td><audio controls src="audio/hesitation/hesitation_2b.wav"></audio></td>
           </tr>
         </tbody>
       </table>
@@ -357,50 +311,40 @@
 
     <!-- Hesitation example 2 (hesitation_4) -->
     <div class="example">
-      <div class="example-title">Example 2</div>
+      <div class="example-title">Hesitation example 2</div>
 
-      <div class="no-prosody-section">
+      <div class="text-input-section">
         <div class="np-label">CosyVoice2 text input</div>
         <div class="np-text">that was very very thoughtful of her</div>
-        <div class="np-label" style="margin-top:0.4rem">CosyVoice2 output — no prosody control</div>
-        <audio controls src="audio/hesitation/hesitation_4_no_prosody.wav"></audio>
       </div>
 
       <table class="ab-table">
         <thead>
           <tr>
-            <th>A</th>
-            <th>B</th>
+            <th><em>Context</em> + transcript (shown to subject)</th>
+            <th>Reference prosody audio</th>
+            <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="row-transcript">
+          <tr class="row-noprosody">
+            <td>&mdash;</td>
+            <td>No prosody control</td>
+            <td><audio controls src="audio/hesitation/hesitation_4_no_prosody.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="transcript-text">That was very, very thoughtful of her.</div>
             </td>
+            <td><audio controls src="audio/hesitation/hesitation_4a_ref.wav"></audio></td>
+            <td><audio controls src="audio/hesitation/hesitation_4a.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="transcript-text">That was very...very thoughtful of her.</div>
             </td>
-          </tr>
-          <tr class="row-ref">
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/hesitation/hesitation_4a_ref.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/hesitation/hesitation_4b_ref.wav"></audio>
-            </td>
-          </tr>
-          <tr class="row-system">
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/hesitation/hesitation_4a.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/hesitation/hesitation_4b.wav"></audio>
-            </td>
+            <td><audio controls src="audio/hesitation/hesitation_4b_ref.wav"></audio></td>
+            <td><audio controls src="audio/hesitation/hesitation_4b.wav"></audio></td>
           </tr>
         </tbody>
       </table>
@@ -415,50 +359,40 @@
 
     <!-- Phrase example 1 (phrase_1) -->
     <div class="example">
-      <div class="example-title">Example 1</div>
+      <div class="example-title">Phrase example 1</div>
 
-      <div class="no-prosody-section">
+      <div class="text-input-section">
         <div class="np-label">CosyVoice2 text input</div>
         <div class="np-text">the market is at thirty one twenty seventh avenue</div>
-        <div class="np-label" style="margin-top:0.4rem">CosyVoice2 output — no prosody control</div>
-        <audio controls src="audio/phrase/phrase_1_no_prosody.wav"></audio>
       </div>
 
       <table class="ab-table">
         <thead>
           <tr>
-            <th>A</th>
-            <th>B</th>
+            <th><em>Context</em> + transcript (shown to subject)</th>
+            <th>Reference prosody audio</th>
+            <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="row-transcript">
+          <tr class="row-noprosody">
+            <td>&mdash;</td>
+            <td>No prosody control</td>
+            <td><audio controls src="audio/phrase/phrase_1_no_prosody.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="transcript-text">The market is at 3120 Seventh Avenue.</div>
             </td>
+            <td><audio controls src="audio/phrase/phrase_1a_ref.wav"></audio></td>
+            <td><audio controls src="audio/phrase/phrase_1a.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="transcript-text">The market is at 31 Twenty-seventh Avenue.</div>
             </td>
-          </tr>
-          <tr class="row-ref">
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/phrase/phrase_1a_ref.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/phrase/phrase_1b_ref.wav"></audio>
-            </td>
-          </tr>
-          <tr class="row-system">
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/phrase/phrase_1a.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/phrase/phrase_1b.wav"></audio>
-            </td>
+            <td><audio controls src="audio/phrase/phrase_1b_ref.wav"></audio></td>
+            <td><audio controls src="audio/phrase/phrase_1b.wav"></audio></td>
           </tr>
         </tbody>
       </table>
@@ -466,52 +400,42 @@
 
     <!-- Phrase example 2 (phrase_3) -->
     <div class="example">
-      <div class="example-title">Example 2</div>
+      <div class="example-title">Phrase example 2</div>
 
-      <div class="no-prosody-section">
+      <div class="text-input-section">
         <div class="np-label">CosyVoice2 text input</div>
         <div class="np-text">only one remembered the lady in red</div>
-        <div class="np-label" style="margin-top:0.4rem">CosyVoice2 output — no prosody control</div>
-        <audio controls src="audio/phrase/phrase_3_no_prosody.wav"></audio>
       </div>
 
       <table class="ab-table">
         <thead>
           <tr>
-            <th>A</th>
-            <th>B</th>
+            <th><em>Context</em> + transcript (shown to subject)</th>
+            <th>Reference prosody audio</th>
+            <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="row-transcript">
+          <tr class="row-noprosody">
+            <td>&mdash;</td>
+            <td>No prosody control</td>
+            <td><audio controls src="audio/phrase/phrase_3_no_prosody.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="context-text">Most of the women had forgotten the strange event by the next week.</div>
               <div class="transcript-text">Only one remembered the lady in red.</div>
             </td>
+            <td><audio controls src="audio/phrase/phrase_3a_ref.wav"></audio></td>
+            <td><audio controls src="audio/phrase/phrase_3a.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="context-text">Most of the people forgot about the strange visitor.</div>
               <div class="transcript-text">Only one remembered: the lady in red.</div>
             </td>
-          </tr>
-          <tr class="row-ref">
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/phrase/phrase_3a_ref.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/phrase/phrase_3b_ref.wav"></audio>
-            </td>
-          </tr>
-          <tr class="row-system">
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/phrase/phrase_3a.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/phrase/phrase_3b.wav"></audio>
-            </td>
+            <td><audio controls src="audio/phrase/phrase_3b_ref.wav"></audio></td>
+            <td><audio controls src="audio/phrase/phrase_3b.wav"></audio></td>
           </tr>
         </tbody>
       </table>
@@ -526,52 +450,42 @@
 
     <!-- Question example 1 (question_4) -->
     <div class="example">
-      <div class="example-title">Example 1</div>
+      <div class="example-title">Question example 1</div>
 
-      <div class="no-prosody-section">
+      <div class="text-input-section">
         <div class="np-label">CosyVoice2 text input</div>
         <div class="np-text">yeah george can do that</div>
-        <div class="np-label" style="margin-top:0.4rem">CosyVoice2 output — no prosody control</div>
-        <audio controls src="audio/question/question_4_no_prosody.wav"></audio>
       </div>
 
       <table class="ab-table">
         <thead>
           <tr>
-            <th>A</th>
-            <th>B</th>
+            <th><em>Context</em> + transcript (shown to subject)</th>
+            <th>Reference prosody audio</th>
+            <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="row-transcript">
+          <tr class="row-noprosody">
+            <td>&mdash;</td>
+            <td>No prosody control</td>
+            <td><audio controls src="audio/question/question_4_no_prosody.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="context-text">We need to pick up food for the picnic.</div>
               <div class="transcript-text">Yeah, George can do that.</div>
             </td>
+            <td><audio controls src="audio/question/question_4a_ref.wav"></audio></td>
+            <td><audio controls src="audio/question/question_4a.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="context-text">George is out on our busiest week.</div>
               <div class="transcript-text">Yeah? George can do that?</div>
             </td>
-          </tr>
-          <tr class="row-ref">
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/question/question_4a_ref.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/question/question_4b_ref.wav"></audio>
-            </td>
-          </tr>
-          <tr class="row-system">
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/question/question_4a.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/question/question_4b.wav"></audio>
-            </td>
+            <td><audio controls src="audio/question/question_4b_ref.wav"></audio></td>
+            <td><audio controls src="audio/question/question_4b.wav"></audio></td>
           </tr>
         </tbody>
       </table>
@@ -579,50 +493,40 @@
 
     <!-- Question example 2 (question_5) -->
     <div class="example">
-      <div class="example-title">Example 2</div>
+      <div class="example-title">Question example 2</div>
 
-      <div class="no-prosody-section">
+      <div class="text-input-section">
         <div class="np-label">CosyVoice2 text input</div>
         <div class="np-text">there's nothing left</div>
-        <div class="np-label" style="margin-top:0.4rem">CosyVoice2 output — no prosody control</div>
-        <audio controls src="audio/question/question_5_no_prosody.wav"></audio>
       </div>
 
       <table class="ab-table">
         <thead>
           <tr>
-            <th>A</th>
-            <th>B</th>
+            <th><em>Context</em> + transcript (shown to subject)</th>
+            <th>Reference prosody audio</th>
+            <th>CosyVoice2 output</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="row-transcript">
+          <tr class="row-noprosody">
+            <td>&mdash;</td>
+            <td>No prosody control</td>
+            <td><audio controls src="audio/question/question_5_no_prosody.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="transcript-text">There's nothing left.</div>
             </td>
+            <td><audio controls src="audio/question/question_5a_ref.wav"></audio></td>
+            <td><audio controls src="audio/question/question_5a.wav"></audio></td>
+          </tr>
+          <tr class="row-ab">
             <td>
               <div class="transcript-text">There's nothing left?</div>
             </td>
-          </tr>
-          <tr class="row-ref">
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/question/question_5a_ref.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">Reference prosody</div>
-              <audio controls src="audio/question/question_5b_ref.wav"></audio>
-            </td>
-          </tr>
-          <tr class="row-system">
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/question/question_5a.wav"></audio>
-            </td>
-            <td>
-              <div class="audio-row-label">CosyVoice2 output w/ controlled prosody</div>
-              <audio controls src="audio/question/question_5b.wav"></audio>
-            </td>
+            <td><audio controls src="audio/question/question_5b_ref.wav"></audio></td>
+            <td><audio controls src="audio/question/question_5b.wav"></audio></td>
           </tr>
         </tbody>
       </table>
